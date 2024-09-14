@@ -72,6 +72,7 @@ def find_matching_files_and_process(txt_folder, img_folder1, img_folder2, output
                         output_content = f.read().strip()
 
                     # Write the instruction, input, and output to the CSV file
+                    # BCE prompting to fine tune the Text decoder
                     csvwriter.writerow([
                         "Analyze chest X-ray data. Provide:\n1. Generate a more detailed finding for normal human understanding and non-healthcare professionals.\n2. Strictly DO NOT ADVISE MEDICINES and PRACTICES.",
                         combined_input,
@@ -158,7 +159,7 @@ def classify_xray(image_path, model, device):
         print(f"Error classifying X-ray {image_path}: {str(e)}")
         return {}  # Return an empty dictionary in case of error
 
-# Function to create the input prompt by combining BLIP embeddings and classification results
+#BCE Prompting
 def create_combined_prompt(blip_embedding, classification_result):
     # Convert BLIP embeddings to a readable string
     blip_str = ', '.join(map(str, blip_embedding.tolist()))
