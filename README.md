@@ -5,6 +5,9 @@
 - [LaTeX Code for Structured Prompts](#latex-code-for-structured-prompts)
 - [Biomedical Condition Embedding (BCE) Prompt](#biomedical-condition-embedding-bce-prompt)
 - [Chain Prompting for Medical Keyword Extraction (CPMK-E)](#chain-prompting-for-medical-keyword-extraction-cpmk-e)
+- [Code Implementation](#code-implementation)
+  - [CPIR-MR Implementation (cpir-mr.py)](#cpir-mr-implementation-cpir-mrpy)
+  - [MTD Dataset Creation (MTD_dc.py)](#mtd-dataset-creation-mtd_dcpy)
 - [Datasets](#datasets)
 - [Statistical Analysis](#statistical-analysis)
 - [Qualitative Comparison](#qualitative-comparison)
@@ -116,6 +119,28 @@ This CPMK-E outline can be used to generate prompts for analyzing and comparing 
 
 The resulting prompt can be used with language models or AI systems capable of processing and analyzing medical text data.
 
+## 💻 Code Implementation
+
+Our project includes two main Python scripts that implement our novel approaches:
+
+### CPIR-MR Implementation (cpir-mr.py)
+
+This script implements the Chain Prompting for Improved Readability - Medical Reports (CPIR-MR) technique, our main contribution. Key features include:
+
+- Utilizes the Google Generative AI package with the "gemini-1.5-flash" model.
+- Processes original medical findings in batches to generate more detailed, human-readable reports.
+- Implements prompt chaining and Chain of Thought (CoT) enhancements for improved output.
+- Generates Simplified Medical Reports (SMRs) structured in 7-line summaries.
+
+### MTD Dataset Creation (MTD_dc.py)
+
+This script creates the Medical Text Dataset (MTD) used for training our multimodal text decoder. It incorporates Biomedical Condition Embedding (BCE) prompting. Key features include:
+
+- Uses BLIP (Bootstrapping Language-Image Pre-training) for image captioning.
+- Employs TorchXRayVision for X-ray image classification.
+- Combines BLIP embeddings and classification results to create comprehensive prompts.
+- Generates a CSV file with instructions, inputs, and outputs for training.
+
 ## 📊 Datasets
 
 Our project includes two important datasets in the `dataset` folder:
@@ -148,5 +173,3 @@ These datasets are crucial for understanding, replicating, and building upon our
 ## 🔬 Qualitative Comparison
 
 ![Qualitative Comparison](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/supp_comparison.png)
-
----
