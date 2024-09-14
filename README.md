@@ -1,4 +1,19 @@
-# Towards making Reports Non-Expert perceivable: A simplified LLM Prompting
+# 🏥 Towards making Reports Non-Expert perceivable: A simplified LLM Prompting
+
+## 📋 Table of Contents
+- [Introduction](#introduction)
+- [LaTeX Code for Structured Prompts](#latex-code-for-structured-prompts)
+- [Biomedical Condition Embedding (BCE) Prompt](#biomedical-condition-embedding-bce-prompt)
+- [Chain Prompting for Medical Keyword Extraction (CPMK-E)](#chain-prompting-for-medical-keyword-extraction-cpmk-e)
+- [Statistical Analysis](#statistical-analysis)
+- [Qualitative Comparison](#qualitative-comparison)
+
+## 🎯 Introduction
+
+This project aims to make medical reports more understandable for non-experts using Large Language Model (LLM) prompting techniques.
+
+## 📝 LaTeX Code for Structured Prompts
+
 ```latex
 \noindent\rule{\linewidth}{0.4pt}
 `` I have \{n\} examples of original findings. Add your notions in place of XXXX. Strictly DO NOT SUGGEST MEDICINES and PRACTICES.
@@ -13,11 +28,12 @@ $\text{prompt} \mathrel{+}= \text{``} \overbrace{j}^{\text{index}} \text{. }
 \text{: } \underbrace{\text{(detailed output)}}_{\text{placeholder}} \text{"}$ ''
 \noindent\rule{\linewidth}{0.4pt}
 ```
-## Usage
+
+### 🔧 Usage
 
 This LaTeX code can be used to generate a structured prompt for analyzing medical findings, ensuring a consistent format and detailed explanations without recommending specific treatments.
 
-## Sample BCE Prompt
+## 🧬 Biomedical Condition Embedding (BCE) Prompt
 
 ```
 Instruction:
@@ -54,11 +70,12 @@ Lung Lesion: 0.08
 Context: AI radiologist assistant analyzing BLIP-processed chest X-ray.
 Limit: 7 sentences.
 ```
-## Usage
+
+### 🔧 Usage
 
 This prompt can be used with large language models or AI systems capable of interpreting medical imaging data to generate human-readable explanations of chest X-ray findings. It's designed to provide informative, yet non-prescriptive, insights suitable for general understanding.
 
-## CPMK-E Outline
+## 🔍 Chain Prompting for Medical Keyword Extraction (CPMK-E)
 
 ```python
 analysis_prompt = """
@@ -88,7 +105,7 @@ Where:
 - `original_j ∈ texts`
 - `detailed_j ∈ extracted_sections[1:]`
 
-## Usage
+### 🔧 Usage
 
 This CPMK-E outline can be used to generate prompts for analyzing and comparing original medical findings with their detailed counterparts. It's particularly useful for:
 
@@ -98,8 +115,12 @@ This CPMK-E outline can be used to generate prompts for analyzing and comparing 
 
 The resulting prompt can be used with language models or AI systems capable of processing and analyzing medical text data.
 
----
+## 📊 Statistical Analysis
 
 ![Statistical Plots](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/combined_analysis_plots_v2.png)
 
+## 🔬 Qualitative Comparison
+
 ![Qualitative Comparison](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/supp_comparison.png)
+
+---
