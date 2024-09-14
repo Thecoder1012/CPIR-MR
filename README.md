@@ -100,6 +100,6 @@ The resulting prompt can be used with language models or AI systems capable of p
 
 ---
 
-![CGP-MRG Response](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/combined_analysis_plots_v2.png)
+![Statistical Plots](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/combined_analysis_plots_v2.png)
 
-
+![Qualitative Comparison](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/wual_v3.png)
