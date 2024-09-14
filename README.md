@@ -58,4 +58,44 @@ Limit: 7 sentences.
 
 This prompt can be used with large language models or AI systems capable of interpreting medical imaging data to generate human-readable explanations of chest X-ray findings. It's designed to provide informative, yet non-prescriptive, insights suitable for general understanding.
 
+## CPMK-E Outline
 
+```python
+analysis_prompt = """
+For each pair of original and detailed findings, provide the following analysis:
+1. List the 5 most important keywords from the original finding.
+2. List the 5 most important keywords from the detailed finding.
+3. Rate the similarity on a scale of 1-10, where 10 is perfectly similar.
+4. Briefly explain why you gave this similarity rating.
+"""
+
+for j in range(1, n+1):
+    analysis_prompt += f"Original {j}: {original_j}\n\n"
+    analysis_prompt += f"Detailed {j}: {detailed_j}\n\n"
+
+analysis_prompt += """
+Provide your analysis for each pair in the following format:
+Pair X:
+1. Original Keywords: [list]
+2. Detailed Keywords: [list]
+3. Similarity Rating: [1-10]
+4. Explanation: [brief explanation]
+"""
+```
+
+Where:
+- `n = |texts| = |extracted_sections| - 1`
+- `original_j ∈ texts`
+- `detailed_j ∈ extracted_sections[1:]`
+
+## Usage
+
+This CPMK-E outline can be used to generate prompts for analyzing and comparing original medical findings with their detailed counterparts. It's particularly useful for:
+
+1. Extracting key information from medical texts
+2. Comparing the similarity of original and detailed findings
+3. Ensuring consistency in medical reporting and analysis
+
+The resulting prompt can be used with language models or AI systems capable of processing and analyzing medical text data.
+
+---
