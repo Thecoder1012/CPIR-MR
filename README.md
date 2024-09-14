@@ -99,3 +99,6 @@ This CPMK-E outline can be used to generate prompts for analyzing and comparing 
 The resulting prompt can be used with language models or AI systems capable of processing and analyzing medical text data.
 
 ---
+
+![CGP-MRG Response](https://github.com/Thecoder1012/CPIR-MR/blob/main/assets/combined_analysis_plots_v2.png)
+Sample Report Comparison
