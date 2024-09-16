@@ -35,7 +35,7 @@ def read_file(file_path):
     with open(file_path, 'r') as file:
         return file.read()
 
-# Function to generate the prompt for the AI model
+# Function to generate the prompt for the Gemini model
 def generate_prompt(texts):
     prompt = f"\n\nI have {len(texts)} examples of original findings. Add your notions in place of XXXX. Strictly DO NOT SUGGEST MEDICINE, PRACTICES.\n\nOriginal Findings:\n"
     prompt += "\n".join(f"{i}. {text}" for i, text in enumerate(texts, 1))
