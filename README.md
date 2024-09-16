@@ -6,7 +6,7 @@
 - [LaTeX Code for Structured Prompts](#latex-code-for-structured-prompts)
 - [Biomedical Condition Embedding (BCE) Prompt](#biomedical-condition-embedding-bce-prompt)
 - [Chain Prompting for Medical Keyword Extraction (CPMK-E)](#chain-prompting-for-medical-keyword-extraction-cpmk-e)
-- [Code Implementation](#code-implementation)
+- [Code Implementation](#codes-implementation)
   - [CPIR-MR Implementation (cpir-mr.py)](#cpir-mr-implementation-cpir-mrpy)
   - [MTD Dataset Creation (MTD_dc.py)](#mtd-dataset-creation-mtd_dcpy)
   - [XML to Text Conversion (xml2txt.py)](#xml-to-text-conversion-xml2txtpy)
@@ -28,7 +28,7 @@ This project aims to make medical reports more understandable for non-experts us
 ```
 project_root/
 │
-├── code/
+├── codes/
 │   ├── cpir-mr.py
 │   └── MTD_dc.py
 │
