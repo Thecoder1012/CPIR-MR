@@ -45,6 +45,7 @@ project_root/
 │
 └── assets/
     ├── combined_analysis_plots_v2.png
+    ├── qual_v3.png
     └── supp_comparison.png
 ```
 
